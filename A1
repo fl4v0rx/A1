@@ -1,0 +1,31 @@
+a = [0.181042, -1.24621, 0.039961, 0.813928, -1.222, 1.10949, 0.712915, -0.333102, 1.45445, 0.392345]
+b = [0.261948 , 0.272864 , 0.213245 , 0.69583 , 0.341292 , 0.541749 , 0.574454 , 0.80044 , 0.712471 , 0.301907]
+def Mittelwert(L):               # Funktion zur Bestimmung des Mittelwertes einer Liste L
+    i = 0
+    u = 0
+    while i < len(L):            # Diese Schleife addiert alle Elemente einer Liste miteinander
+        u = u + L[i]
+        i = i+1
+    u = u/len(L)                 # Nun wird es durch die Anzahl der Elemente der Liste L dividiert
+    return u
+
+L = a                            # Hier wird der Mittelwert der Liste a ermittelt
+print ("Der Mittelwert beträgt:", Mittelwert(L))
+L = b                            # Hier wird der Mittelwert der Liste b ermittelt
+print ("Der Mittelwert beträgt:", Mittelwert(L))
+
+
+def Standardabweichung(L):       # Funktion zur Bestimmung der Standardabweichung einer Liste L
+    i = 0
+    o = 0
+    while i < len(L):            # Diese Schleife addiert alle Elemente einer Liste miteinander, wobei jeweils immer der Mittelwert subtrahiert und dann quadriert wird
+        o = o + (L[i] - Mittelwert(L))**2
+        i = i+1
+    o = o/len(L)                 # Nun wird es durch die Anzahl der Elemente der Liste L dividiert
+    o = o**0.5                   # Zuletzt wird hier die Wurzel gezogen
+    return o
+
+L = a                            # Hier wird die Standardabweichung der Liste a ermittelt
+print ("Die Standardabweichung beträgt:", Standardabweichung(L))
+L = b                            # Hier wird die Standardabweichung der Liste b ermittelt
+print ("Die Standardabweichung beträgt:", Standardabweichung(L))
